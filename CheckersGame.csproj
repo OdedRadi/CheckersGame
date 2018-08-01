@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CBFD79C-B275-4529-8F17-0133FC64406E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CheckersGame</RootNamespace>
+    <AssemblyName>CheckersGame</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="UserInterface\Launcher.cs" />
+    <Compile Include="Logics\Events\BecameKingEvent.cs" />
+    <Compile Include="Logics\Events\IGameLogicEvent.cs" />
+    <Compile Include="Logics\Events\SoldierMovedEvent.cs" />
+    <Compile Include="Logics\Events\SoldierRemovedEvent.cs" />
+    <Compile Include="Exceptions\NegetiveScoreException.cs" />
+    <Compile Include="Exceptions\PlayerNameTooLongException.cs" />
+    <Compile Include="Exceptions\PlayerNameWithSpacesException.cs" />
+    <Compile Include="Logics\Board.cs" />
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="Logics\GameEngine.cs" />
+    <Compile Include="Logics\Soldier.cs" />
+    <Compile Include="Move.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="UserInterface\GameEndedEventHanlder.cs" />
+    <Compile Include="UserInterface\Settings.cs" />
+    <Compile Include="Symbols.cs" />
+    <Compile Include="UserInterface\PanelCheckers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserInterface\FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\PictureBoxSoldier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserInterface\PicureBoxTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserInterface\SoldierAnimationFinishedEventHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\checker black king marked red.png" />
+    <Content Include="Resources\checker black king.png" />
+    <Content Include="Resources\checker black marked red.png" />
+    <Content Include="Resources\checker black.png" />
+    <Content Include="Resources\checker white king marked red.png" />
+    <Content Include="Resources\checker white king.png" />
+    <Content Include="Resources\checker white marked red.png" />
+    <Content Include="Resources\checker white.png" />
+    <Content Include="Resources\tile dark marked red.png" />
+    <Content Include="Resources\tile dark.png" />
+    <Content Include="Resources\tile light marked red.png" />
+    <Content Include="Resources\tile light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
